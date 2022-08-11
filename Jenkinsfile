@@ -23,8 +23,8 @@ pipeline {
     stage('Some step') {
       steps {
         sh '''
-        echo "${env.ref}"
-        sh "/home/jenkins/test1.sh"      
+        echo ${env.ref}
+        sh /home/jenkins/test1.sh      
         '''
       }
     }

@@ -14,12 +14,17 @@ pipeline {
   )
  }
   
+  
   stages {
     stage('Some step') {
       steps {
         sh '''
-        sh /home/jenkins/test1.sh      
+        ssh docker@10.33.133.100 'cd /home/docker
+        sh test1.sh'
+        
+          
         '''
+  // sh /home/jenkins/test1.sh   
       }
     }
   }

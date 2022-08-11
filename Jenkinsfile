@@ -1,12 +1,12 @@
 pipeline {
   agent any
-   triggers {
-    GenericTrigger(
-     genericVariables: [
-      [key: 'ref', value: '$.pull_request.head.ref']
-     ]
-   )
-  }
+  // triggers {
+  //  GenericTrigger(
+   //  genericVariables: [
+    //  [key: 'ref', value: '$.pull_request.head.ref']
+   //  ]
+  // )
+ // }
   stages {
     stage('Some step') {
       steps {

@@ -19,7 +19,10 @@ pipeline {
     stage('Some step') {
       steps {
         sshagent (credentials: ['Docker-Server-Test']) {
+        
         sh '''
+        echo $ref
+        
         ssh docker@10.33.133.100 'cd /home/docker
         sh test1.sh'
         

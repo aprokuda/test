@@ -15,7 +15,7 @@ pipeline {
     stage('Some step') {
       steps {
         sh "echo $ref"
-        sh "cd /home/jenkins && mkdir $ref"      
+        sh "mkdir /home/$ref"      
       
       }
     }

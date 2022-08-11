@@ -13,12 +13,19 @@ pipeline {
       
   )
  }
+  
+ environment{
+        ref='$ref'
+
+  } 
+  
   stages {
     stage('Some step') {
       steps {
-        sh "echo $ref"
-        sh "sh /home/jenkins/test1.sh"      
-      
+        sh '''
+        echo "${env.ref}"
+        sh "/home/jenkins/test1.sh"      
+        '''
       }
     }
   }

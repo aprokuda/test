@@ -3,7 +3,7 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'ref', value: '$.pull_request.head.ref']
+      [key: 'ref', value: '$.ref']
      ],
 
      causeString: 'Triggered on $ref',

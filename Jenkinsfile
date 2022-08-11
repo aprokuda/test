@@ -5,6 +5,7 @@ pipeline {
      genericVariables: [
       [key: 'ref', value: '$.pull_request.head.ref']
      ]
+   )
   }
   stages {
     stage('Some step') {

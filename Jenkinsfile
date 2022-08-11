@@ -4,10 +4,10 @@ pipeline {
     GenericTrigger(
      genericVariables: [
       [key: 'ref', value: '$.pull_request.head.ref']
-     ]
+     ],
     
     token: '148946516123',
-    tokenCredentialId: '',
+    tokenCredentialId: ''
       
   )
  }

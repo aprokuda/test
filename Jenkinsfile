@@ -14,11 +14,6 @@ pipeline {
   )
  }
   
-// environment{
-  //      ref='$ref'
-
- // } 
-  
   stages {
     stage('Some step') {
       steps {

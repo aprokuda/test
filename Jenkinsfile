@@ -21,14 +21,11 @@ pipeline {
         sshagent (credentials: ['Docker-Server-Test']) {
         
         sh '''
-        echo $ref
-        ref=$ref
         ssh docker@10.33.133.100 'cd /home/docker
-        ref=$ref
-        sh test1.sh'
+        mkdir $ref'
         
-          
         '''
+        //  sh test1.sh
   // sh /home/jenkins/test1.sh   
         }
       }

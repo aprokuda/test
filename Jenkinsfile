@@ -25,7 +25,7 @@ pipeline {
         
         sh '''
         ssh docker@10.33.133.100 "cd /home/docker
-        sh test1.sh"
+        sh test1.sh $ref"
         
         
         '''

@@ -15,9 +15,9 @@ pipeline {
  }
   
   
-   environment{
-     ref=123
-   }
+//   environment{
+//     ref=123
+ //  }
   stages {
     stage('Some step') {
       steps {
@@ -25,7 +25,7 @@ pipeline {
         
         sh '''
         ssh docker@10.33.133.100 "cd /home/docker
-        echo \$ref"
+        echo $ref"
         
         '''
         //  sh test1.sh

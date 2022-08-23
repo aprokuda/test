@@ -15,7 +15,7 @@ pipeline {
     )
    }
    environment{ 
-       state=$state
+       state= "$state"
      }
      
   stages {

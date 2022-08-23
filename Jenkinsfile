@@ -22,7 +22,7 @@ pipeline {
       
      
     stage('Some step') {
-      //  when { expression { env.state == 'open' } } 
+         when { expression { env.state1 == 'open' } } 
      
       steps {
         

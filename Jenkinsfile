@@ -21,8 +21,6 @@ pipeline {
     
   
   stages {
-      
-    when { expression { env.state1 == 'open' } } 
     
     stage('Some step') {
          

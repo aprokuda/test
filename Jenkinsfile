@@ -27,7 +27,7 @@ pipeline {
       steps {
         
         sh '''#!/bin/bash
-        echo env.state1
+        echo $state1
         
         
         '''

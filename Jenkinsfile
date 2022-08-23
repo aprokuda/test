@@ -17,12 +17,14 @@ pipeline {
    environment{ 
        state1= "$state"
      }
-     
+  
+   when { expression { env.state1 == 'open' } } 
+  
   stages {
       
      
     stage('Some step') {
-         when { expression { env.state1 == 'open' } } 
+         
      
       steps {
         

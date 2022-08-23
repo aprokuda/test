@@ -15,20 +15,20 @@ pipeline {
     )
    }
    environment{ 
-       state= "$state"
+       state1= "$state"
      }
      
   stages {
       
      
     stage('Some step') {
-        when { expression { env.state == 'open' } } 
+      //  when { expression { env.state == 'open' } } 
      
       steps {
         
         sh '''#!/bin/bash
-        echo Start-Pipeline 
-        echo $ref
+        echo env.state1
+        
         
         '''
         //  sh test1.sh

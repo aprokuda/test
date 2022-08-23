@@ -5,33 +5,35 @@ pipeline {
    triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'ref', value: '$.pull_request.head.ref']
+      [key: 'ref', value: '$.pull_request.head.ref'],
+      [key: 'state', value: '$.pull_request.state']
      ],
     
     token: '148946516123',
     tokenCredentialId: ''
       
-  )
- }
-  
-  
-//   environment{
-//     ref=123
- //  }
+    )
+   }
+   environment{ 
+       state=$state
+     }
+     
   stages {
+      
+     
     stage('Some step') {
+        when { expression { env.state == 'opened' } } 
+     
       steps {
-        sshagent (credentials: ['Docker-Server-Test']) {
         
-        sh '''
-        ssh docker@10.33.133.100 "cd /home/docker
-        env ref=$ref sh test1.sh"
-        
+        sh '''#!/bin/bash
+        echo Start-Pipeline 
+        echo $ref
         
         '''
         //  sh test1.sh
   // sh /home/jenkins/test1.sh   
-        }
+        
       }
     }
   }
